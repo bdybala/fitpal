@@ -2,6 +2,7 @@ package com.example.fitpal.entities;
 
 import com.example.fitpal.enums.Gender;
 import lombok.*;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 
@@ -21,6 +22,9 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(unique = true)
+    private String login;
+    private String password;
     private String firstName;
     private String surname;
     private Integer age;
