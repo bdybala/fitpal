@@ -15,7 +15,7 @@ import static com.example.fitpal.config.Constants.DB_PREFIX;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = DB_PREFIX + "person")
+@Table(name = DB_PREFIX + "user")
 public class User {
 
     @Id
@@ -34,5 +34,6 @@ public class User {
     private Double desiredIntervalToLoseWeight;
 
     @ManyToOne
+    @JoinColumn
     private Role role;
 }
