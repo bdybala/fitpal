@@ -11,6 +11,8 @@ public class UserMapper implements EntityMapper<User, UserDto> {
     public UserDto map(User user) {
         return UserDto.builder()
                 .id(user.getId())
+                .login(user.getLogin())
+                .password(user.getPassword())
                 .age(user.getAge())
                 .firstName(user.getFirstName())
                 .height(user.getHeight())
@@ -23,6 +25,8 @@ public class UserMapper implements EntityMapper<User, UserDto> {
     public User unmap(UserDto userDto) {
         return User.builder()
                 .id(userDto.getId())
+                .login(userDto.getLogin())
+                .password(userDto.getPassword())
                 .age(userDto.getAge())
                 .firstName(userDto.getFirstName())
                 .height(userDto.getHeight())
