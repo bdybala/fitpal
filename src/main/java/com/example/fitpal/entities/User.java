@@ -2,6 +2,7 @@ package com.example.fitpal.entities;
 
 import com.example.fitpal.enums.Gender;
 import lombok.*;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 
@@ -34,6 +35,6 @@ public class User {
     private Double desiredIntervalToLoseWeight;
 
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(nullable = false)
     private Role role;
 }
