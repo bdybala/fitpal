@@ -32,4 +32,7 @@ public class User {
 
     private Double massToLoseWeight;
     private Double desiredIntervalToLoseWeight;
+
+    @ManyToOne
+    private Role role;
 }
