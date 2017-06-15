@@ -1,11 +1,13 @@
 package com.example.fitpal.entities;
 
 import com.example.fitpal.enums.Gender;
+import com.example.fitpal.enums.Role;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 
+import java.util.Date;
 import java.util.DoubleSummaryStatistics;
 
 import static com.example.fitpal.config.Constants.DB_PREFIX;
@@ -26,7 +28,7 @@ public class User {
     private String password;
     private String firstName;
     private String surname;
-    private Integer age;
+    private Date birthday;
     private Gender gender;
     private Double mass;
     private Double height;
@@ -34,7 +36,5 @@ public class User {
     private Double massToLoseWeight;
     private Double desiredIntervalToLoseWeight;
 
-    @ManyToOne
-    @JoinColumn(nullable = false)
     private Role role;
 }

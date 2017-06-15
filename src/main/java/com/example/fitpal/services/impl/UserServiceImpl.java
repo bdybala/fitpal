@@ -44,8 +44,8 @@ public class UserServiceImpl implements UserService {
     }
 
     private User updateUser(User user, UserDto userDto) {
-        if (userDto.getAge() != null)
-            user.setAge(userDto.getAge());
+        if (userDto.getBirthday()!= null)
+            user.setBirthday(userDto.getBirthday());
         if (userDto.getFirstName() != null)
             user.setFirstName(userDto.getFirstName());
         if (userDto.getSurname() != null)

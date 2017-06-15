@@ -13,11 +13,13 @@ public class UserMapper implements EntityMapper<User, UserDto> {
                 .id(user.getId())
                 .login(user.getLogin())
                 .password(user.getPassword())
-                .age(user.getAge())
                 .firstName(user.getFirstName())
-                .height(user.getHeight())
-                .mass(user.getMass())
                 .surname(user.getSurname())
+                .birthday(user.getBirthday())
+                .gender(user.getGender())
+                .mass(user.getMass())
+                .height(user.getHeight())
+                .role(user.getRole())
                 .build();
     }
 
@@ -27,11 +29,13 @@ public class UserMapper implements EntityMapper<User, UserDto> {
                 .id(userDto.getId())
                 .login(userDto.getLogin())
                 .password(userDto.getPassword())
-                .age(userDto.getAge())
                 .firstName(userDto.getFirstName())
-                .height(userDto.getHeight())
-                .mass(userDto.getMass())
                 .surname(userDto.getSurname())
+                .birthday(userDto.getBirthday())
+                .gender(userDto.getGender())
+                .mass(userDto.getMass())
+                .height(userDto.getHeight())
+                .role(userDto.getRole())
                 .build();
     }
 }
