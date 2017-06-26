@@ -1,9 +1,11 @@
 package com.example.fitpal.services.impl;
 
 import com.example.fitpal.dtos.LoginDto;
+import com.example.fitpal.dtos.NewUserDto;
 import com.example.fitpal.dtos.UserDto;
 import com.example.fitpal.entities.User;
 import com.example.fitpal.exceptions.EntityNotFoundException;
+import com.example.fitpal.mappers.NewUserMapper;
 import com.example.fitpal.mappers.UserMapper;
 import com.example.fitpal.repositories.UserRepository;
 import com.example.fitpal.services.UserService;
@@ -24,6 +26,10 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private NewUserMapper newUserMapper;
+
+
     @Override
     public List<UserDto> findAll() {
         return userMapper.map(userRepository.findAll());
@@ -33,8 +39,8 @@ public class UserServiceImpl implements UserService {
     public UserDto findOne(Long id) { return userMapper.map(userRepository.findOne(id)); }
 
     @Override
-    public UserDto save(UserDto userDto) {
-        return userMapper.map(userRepository.save(userMapper.unmap(userDto)));
+    public UserDto save(NewUserDto newUserDto) {
+        return userMapper.map(userRepository.save(newUserMapper.unmap(newUserDto)));
     }
 
     @Override
