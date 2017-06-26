@@ -1,5 +1,6 @@
 package com.example.fitpal.services;
 
+import com.example.fitpal.dtos.LoginDto;
 import com.example.fitpal.dtos.UserDto;
 import com.example.fitpal.exceptions.EntityNotFoundException;
 
@@ -12,4 +13,6 @@ public interface UserService {
     UserDto save(UserDto userDto);
     UserDto edit(UserDto userDto) throws EntityNotFoundException;
     void remove(Long id) throws EntityNotFoundException;
+
+    boolean authenticate(LoginDto loginDto) throws EntityNotFoundException;
 }

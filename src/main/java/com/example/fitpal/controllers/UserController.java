@@ -1,5 +1,6 @@
 package com.example.fitpal.controllers;
 
+import com.example.fitpal.dtos.LoginDto;
 import com.example.fitpal.dtos.UserDto;
 import com.example.fitpal.exceptions.EntityNotFoundException;
 import com.example.fitpal.services.UserService;
@@ -33,4 +34,13 @@ public class UserController {
     public void remove(@PathVariable("id") Long id)
             throws EntityNotFoundException
     { userService.remove(id); }
+
+    @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
+    public boolean authUser(@RequestBody LoginDto loginDto) {
+        try {
+            return userService.authenticate(loginDto);
+        } catch (EntityNotFoundException e) {
+            throw e;
+        }
+    }
 }

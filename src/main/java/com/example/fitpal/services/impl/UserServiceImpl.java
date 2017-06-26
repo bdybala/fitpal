@@ -1,5 +1,6 @@
 package com.example.fitpal.services.impl;
 
+import com.example.fitpal.dtos.LoginDto;
 import com.example.fitpal.dtos.UserDto;
 import com.example.fitpal.entities.User;
 import com.example.fitpal.exceptions.EntityNotFoundException;
@@ -67,5 +68,12 @@ public class UserServiceImpl implements UserService {
     public void remove(Long id) throws EntityNotFoundException {
         userRepository.delete(Optional.ofNullable(userRepository.findOne(id)).orElseThrow(()
                 -> new EntityNotFoundException("")));
+    }
+
+    @Override
+    public boolean authenticate(LoginDto loginDto) throws EntityNotFoundException {
+        User user = Optional.ofNullable(userRepository.findByLogin(loginDto.getLogin()))
+                .orElseThrow(() -> new EntityNotFoundException("User with that login doesn't exist!"));
+        return user.getPassword().equals(loginDto.getPassword());
     }
 }
