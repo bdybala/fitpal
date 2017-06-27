@@ -23,6 +23,9 @@ public class UserController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public UserDto findOne(@PathVariable("id") Long id) { return userService.findOne(id); }
 
+    @RequestMapping(value = "/by-login/{login}", method = RequestMethod.GET)
+    public UserDto findByLogin(@PathVariable String login) { return userService.findByLogin(login); }
+
     @RequestMapping(method = RequestMethod.POST)
     public UserDto create(@RequestBody NewUserDto newUserDto) { return userService.save(newUserDto); }
 

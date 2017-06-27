@@ -11,6 +11,7 @@ public interface UserService {
 
     List<UserDto> findAll();
     UserDto findOne(Long id);
+    UserDto findByLogin(String login);
     UserDto save(NewUserDto newUserDto);
     UserDto edit(UserDto userDto) throws EntityNotFoundException;
     void remove(Long id) throws EntityNotFoundException;

@@ -39,6 +39,9 @@ public class UserServiceImpl implements UserService {
     public UserDto findOne(Long id) { return userMapper.map(userRepository.findOne(id)); }
 
     @Override
+    public UserDto findByLogin(String login) { return userMapper.map(userRepository.findByLogin(login)); }
+
+    @Override
     public UserDto save(NewUserDto newUserDto) {
         return userMapper.map(userRepository.save(newUserMapper.unmap(newUserDto)));
     }
