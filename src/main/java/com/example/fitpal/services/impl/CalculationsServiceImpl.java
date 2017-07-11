@@ -11,6 +11,7 @@ public class CalculationsServiceImpl implements CalculationsService {
 
     @Override
     public Integer calculateKcal(InputDataDto inputDataDto) {
-        return 1000 * Double.valueOf(Math.random()).intValue();
+        Double randomDouble = 2000D * Double.valueOf(Math.random());
+        return randomDouble.intValue();
     }
 }
