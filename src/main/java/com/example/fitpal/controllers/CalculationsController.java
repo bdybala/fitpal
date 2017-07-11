@@ -17,7 +17,10 @@ public class CalculationsController {
 
     @RequestMapping(method = RequestMethod.POST)
     public Integer calculateKcal(@RequestBody InputDataDto inputDataDto) {
-        return calculationsService.calculateKcal(inputDataDto);
+
+        Integer integer = calculationsService.calculateKcal(inputDataDto);
+        System.out.println("calculated kcal: " + integer);
+        return integer;
     }
 
 }
