@@ -2,7 +2,9 @@ package com.example.fitpal.mappers;
 
 import com.example.fitpal.dtos.ExerciseDto;
 import com.example.fitpal.entities.Exercise;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ExerciseMapper implements EntityMapper<Exercise, ExerciseDto> {
 
     @Override
