@@ -36,10 +36,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto findOne(Long id) { return userMapper.map(userRepository.findOne(id)); }
+    public UserDto findOne(Long id) throws EntityNotFoundException {
+        return userMapper.map(Optional.ofNullable(userRepository.findOne(id)).orElseThrow(
+                () -> new EntityNotFoundException("User with that id not found! :" + id)));
+    }
 
     @Override
-    public UserDto findByLogin(String login) { return userMapper.map(userRepository.findByLogin(login)); }
+    public UserDto findByLogin(String login) throws EntityNotFoundException {
+        return userMapper.map(Optional.ofNullable(userRepository.findByLogin(login)).orElseThrow (
+            () -> new EntityNotFoundException("User with that login not found! :" + login)));
+    }
 
     @Override
     public UserDto save(NewUserDto newUserDto) {

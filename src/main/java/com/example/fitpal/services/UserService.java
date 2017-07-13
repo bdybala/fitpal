@@ -10,8 +10,8 @@ import java.util.List;
 public interface UserService {
 
     List<UserDto> findAll();
-    UserDto findOne(Long id);
-    UserDto findByLogin(String login);
+    UserDto findOne(Long id) throws EntityNotFoundException;
+    UserDto findByLogin(String login) throws EntityNotFoundException;
     UserDto save(NewUserDto newUserDto);
     UserDto edit(UserDto userDto) throws EntityNotFoundException;
     void remove(Long id) throws EntityNotFoundException;
