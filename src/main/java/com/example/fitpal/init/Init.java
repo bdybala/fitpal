@@ -51,25 +51,25 @@ public class Init {
         if (!productRepository.existsByProductName("Jajko")) {
             productRepository.save(Product.builder()
                     .productName("Jajko")
-                    .kcal("kcal")
-                    .protein("protein")
-                    .fat("fat")
+                    .kcal(123)
+                    .protein(234)
+                    .fat(345)
                     .build());
         }
         if (!productRepository.existsByProductName("Pizza")) {
             productRepository.save(Product.builder()
                     .productName("Pizza")
-                    .kcal("kcal")
-                    .protein("protein")
-                    .fat("fat")
+                    .kcal(321)
+                    .protein(432)
+                    .fat(543)
                     .build());
         }
         if (!productRepository.existsByProductName("Hamburger")) {
             productRepository.save(Product.builder()
                     .productName("Hamburger")
-                    .kcal("kcal")
-                    .protein("protein")
-                    .fat("fat")
+                    .kcal(654)
+                    .protein(543)
+                    .fat(432)
                     .build());
         }
     }

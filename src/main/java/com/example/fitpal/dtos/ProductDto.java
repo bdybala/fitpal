@@ -12,7 +12,7 @@ public class ProductDto {
     private Long id;
     private String productName;
 
-    private String kcal;
-    private String protein;
-    private String fat;
+    private Integer kcal;
+    private Integer protein;
+    private Integer fat;
 }

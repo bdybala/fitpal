@@ -1,5 +1,6 @@
 package com.example.fitpal.dtos;
 
+
 import lombok.*;
 
 import java.util.List;
